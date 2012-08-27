@@ -81,17 +81,17 @@ def calcToDegrees (gpsdata):
 if __name__ == "__main__":
     if len (sys.argv) < 2:
         print "using: python photocoord.py filename"
-        exit (1)
+        sys.exit (1)
 
     fname = sys.argv[1]
     try:
         (latitude, longitude) = getGpsCoord (fname)
     except IOError:
         print "Can't open file '{0}'".format (fname)
-        exit (1)
+        sys.exit (1)
     except KeyError:
         print "GPS data not found in '{0}'".format (fname)
-        exit (1)
+        sys.exit (1)
 
     print getYandexLink (latitude, longitude)
     print getGoogleLink (latitude, longitude)
