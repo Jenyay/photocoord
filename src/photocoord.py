@@ -32,7 +32,7 @@ def getYandexLink (latitude, longitude):
     request = "{latitude} N, {longitude} E".format (latitude=latitude, longitude=longitude)
     request = urllib.quote (request)
 
-    link = "http://maps.yandex.ru?text={0}".format (request)
+    link = "http://maps.yandex.ru/?text={0}".format (request)
     return link
 
 
@@ -42,7 +42,7 @@ def getGoogleLink (latitude, longitude):
     """
     request = "{latitude}+N,+{longitude}+E".format (latitude=latitude, longitude=longitude)
 
-    link = "http://maps.google.ru?q={0}".format (request)
+    link = "http://maps.google.ru/?q={0}".format (request)
     return link
 
 
